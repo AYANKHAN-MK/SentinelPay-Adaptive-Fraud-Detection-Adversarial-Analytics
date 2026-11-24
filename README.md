@@ -6,6 +6,7 @@ It combines synthetic transaction generation, DuckDB SQL behavioural feature eng
 
 ## Live App & Entry Point
 
+- **Live Streamlit App:** https://sentinelpay-adaptive-fraud-detection-adversarial-analytics-5xa.streamlit.app/
 - **Streamlit Main File:** `streamlit_app.py`
 - **Optional REST API:** `api/main.py` (`uvicorn api.main:app --reload`)
 
@@ -13,40 +14,23 @@ It combines synthetic transaction generation, DuckDB SQL behavioural feature eng
 
 ```text
 sentinelpay/
-├── streamlit_app.py              # Interactive Streamlit dashboard (main entry point)
-├── requirements.txt              # Python dependencies compatible with Streamlit Cloud
+├── streamlit_app.py              # Interactive Streamlit dashboard (main entry point)[cite: 16]
+├── requirements.txt              # Python dependencies compatible with Streamlit Cloud[cite: 16]
 ├── .streamlit/
-│   └── config.toml               # Streamlit UI theme & server settings
+│   └── config.toml               # Streamlit UI theme & server settings[cite: 16]
 ├── src/
 │   └── sentinelpay/
-│       ├── generate_data.py      # Synthetic payment, device, IP & fraud cluster generator
-│       ├── build_features.py     # DuckDB SQL feature engineering runner
-│       ├── train.py              # Time-split HistGradientBoosting model & rule baseline
-│       ├── adversarial.py        # Adaptive evasion scenarios (splitting, throttling, rotation)
-│       └── drift.py              # Population Stability Index (PSI) drift checks
+│       ├── generate_data.py      # Synthetic payment, device, IP & fraud cluster generator[cite: 16]
+│       ├── build_features.py     # DuckDB SQL feature engineering runner[cite: 16]
+│       ├── train.py              # Time-split HistGradientBoosting model & rule baseline[cite: 16]
+│       ├── adversarial.py        # Adaptive evasion scenarios (splitting, throttling, rotation)[cite: 16]
+│       └── drift.py              # Population Stability Index (PSI) drift checks[cite: 16]
 ├── sql/
-│   └── features.sql              # Windowed velocity & shared-entity SQL queries
+│   └── features.sql              # Windowed velocity & shared-entity SQL queries[cite: 16]
 ├── api/
-│   └── main.py                   # FastAPI scoring endpoint
+│   └── main.py                   # FastAPI scoring endpoint[cite: 16]
 ├── docs/
-│   ├── architecture.md           # System pipeline diagram
-│   └── fraud_investigation.md    # Analyst triage workflow
+│   ├── architecture.md           # System pipeline diagram[cite: 16]
+│   └── fraud_investigation.md    # Analyst triage workflow[cite: 16]
 └── tests/
-    └── test_smoke.py             # End-to-end pipeline smoke test
-```
-
-## Run Locally
-
-```bash
-python -m venv .venv
-source .venv/bin/activate        # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-streamlit run streamlit_app.py
-```
-
-## Deploy on Streamlit Community Cloud
-
-1. Push the contents of this folder to your GitHub repository.
-2. In Streamlit Community Cloud, click **New app**.
-3. Select your repository and branch (`main`), and set **Main file path** to `streamlit_app.py`.
-4. Click **Deploy**.
+    └── test_smoke.py             # End-to-end pipeline smoke test[cite: 16]
