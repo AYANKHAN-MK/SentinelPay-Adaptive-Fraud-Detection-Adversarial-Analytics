@@ -45,17 +45,12 @@ with st.sidebar:
     review_pct = st.slider("Analyst Review Capacity (Top %)", min_value=0.5, max_value=5.0, value=1.5, step=0.5)
     st.divider()
     st.markdown(
-        "**Pipeline Stack**
-"
-        "- **Data:** Synthetic payment & device graph
-"
-        "- **Features:** DuckDB window & entity SQL
-"
-        "- **Model:** HistGradientBoostingClassifier
-"
-        "- **Monitoring:** Population Stability Index (PSI)"
-    )
-
+    "**Pipeline Stack**\n"
+    "- **Data:** Synthetic payment & device graph\n"
+    "- **Features:** DuckDB window & entity SQL\n"
+    "- **Model:** HistGradientBoostingClassifier\n"
+    "- **Monitoring:** Population Stability Index (PSI)"
+)
 raw_df, features_df, results = load_pipeline(n_rows, int(seed), float(review_pct))
 metrics = results["metrics"]
 model = results["model"]
